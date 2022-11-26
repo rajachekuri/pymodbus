@@ -1,9 +1,8 @@
 import time
 from pymodbus.client.sync import ModbusTcpClient
+#client = ModbusTcpClient("ipaddress", port=502, timeout=3)
 client = ModbusTcpClient("192.168.2.215", port=502, timeout=3)
 client.connect()
-print("connected")
-
 
 read=client.read_coils(address =1,count =3,unit=1)
 print(read.bits)
